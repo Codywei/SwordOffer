@@ -45,4 +45,11 @@ public class FirstNotRepeatingChar {
         }
         return -1;
     }
+
+    public static void main(String[] args) {
+        FirstNotRepeatingChar fa=new FirstNotRepeatingChar();
+        String str="adfawaf";
+        System.out.println(fa.FirstNotRepeatingChar(str));
+        System.out.println(fa.FirstNotRepeatingChar2(str));
+    }
 }
