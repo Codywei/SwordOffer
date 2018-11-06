@@ -30,7 +30,7 @@ public class FindNumsAppearOnce {
         int[] nums={1,2,3,4,2,1,3,5};
         int[] num1=new int[1];
         int[] num2=new int[1];
-        
+
         fn.FindNumsAppearOnce(nums,num1,num2);
         System.out.println(num1[0]);
         System.out.println(num2[0]);
