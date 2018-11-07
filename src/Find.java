@@ -14,9 +14,10 @@ public class Find {
         }
         int rows=matrix.length;
         int cols=matrix.length;
+        //从右上角开始
         int r=0;
         int c=cols-1;
-        while(r<=rows-1&&c>=1){
+        while(r<=rows-1&&c>=0){
             if(matrix[r][c]==target){
                 return true;
             }
@@ -33,7 +34,7 @@ public class Find {
     public static void main(String[] args) {
         int [][]mat={ {1,   4,  7, 11, 15}, {2,   5,  8, 12, 19},{3,   6,  9, 16, 22},{10, 13, 14, 17, 24},{18, 21, 23, 26, 30}};
         Find find=new Find();
-        System.out.println(find.find(20,mat));
+        System.out.println(find.find(100,mat));
 
 
     }
