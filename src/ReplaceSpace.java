@@ -7,7 +7,7 @@
  解题思路
  令 P1 指向字符串原来的末尾位置，P2 指向字符串现在的末尾位置。P1 和 P2 从后向前遍历，当 P1 遍历到一个空格时，就需要令 P2 指向的位置依次填充 02%（注意是逆序的），否则就填充上 P1 指向字符的值。
 
- 从后向前遍是为了在改变 P2 所指向的内容时，不会影响到 P1 遍历原来字符串的内容。
+ 从后向前遍历是为了在改变 P2 所指向的内容时，不会影响到 P1 遍历原来字符串的内容。
  * */
 public class ReplaceSpace {
     public String replaceSpace(StringBuffer str) {
@@ -18,7 +18,8 @@ public class ReplaceSpace {
             }
         }
         int P2=str.length()-1;
-        while(P1>=0&&P2>P1){
+        //判断原字符串长度没遍历完，且新字符串长度依旧大于原字符串长度（感觉先判断P2>P1会好一些）
+        while(P2>P1&&P1>=0){
             char c=str.charAt(P1--);
             if(c==' '){
                 str.setCharAt(P2--,'0');
@@ -29,8 +30,9 @@ public class ReplaceSpace {
             }
         }
           return str.toString();
+}
 
-    }
+
 
     public static void main(String[] args) {
         StringBuffer str=new StringBuffer("We Are Happy");
