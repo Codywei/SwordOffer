@@ -44,6 +44,9 @@ public class ListTailtoHead {
 
     /**
      使用头插法
+     头结点和第一个节点的区别：
+     头结点是在头插法中使用的一个额外节点，这个节点不存储值；
+     第一个节点就是链表的第一个真正存储值的节点。
      * */
     public ArrayList<Integer> printListFromTailToHead3(ListNode listNode) {
         // 头插法构建逆序链表
