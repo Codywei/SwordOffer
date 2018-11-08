@@ -6,6 +6,9 @@ import java.util.Stack;
 
  题目描述
  输入链表的第一个节点，从尾到头反过来打印出每个结点的值。
+
+ 解题思路
+ 1.栈（后进先出） 2.递归   3.头插法  4.Collections.reverse
  */
 
 public class ListTailtoHead {
@@ -25,13 +28,15 @@ public class ListTailtoHead {
         return ret;
     }
 
+
+
     /**
      使用递归
      * */
     public ArrayList<Integer> printListFromTailToHead2(ListNode listNode) {
         ArrayList<Integer> ret = new ArrayList<>();
         if (listNode != null) {
-            ret.addAll(printListFromTailToHead(listNode.next));
+            ret.addAll(printListFromTailToHead2(listNode.next));
             ret.add(listNode.val);
         }
         return ret;
@@ -80,9 +85,9 @@ public class ListTailtoHead {
         n2.next=n3;
         ListTailtoHead lth=new ListTailtoHead();
         ArrayList<Integer> list=lth.printListFromTailToHead(n1);
-        ArrayList<Integer> list2=lth.printListFromTailToHead(n1);
-        ArrayList<Integer> list3=lth.printListFromTailToHead(n1);
-        ArrayList<Integer> list4=lth.printListFromTailToHead(n1);
+        ArrayList<Integer> list2=lth.printListFromTailToHead2(n1);
+        ArrayList<Integer> list3=lth.printListFromTailToHead3(n1);
+        ArrayList<Integer> list4=lth.printListFromTailToHead4(n1);
         for(int i=0;i<list.size();i++){
             System.out.println(list.get(i));
         }
