@@ -49,8 +49,9 @@ public class RotateArray {
 
     public static void main(String[] args) {
         int[] dp={3,4,5,1,2};
+        int[] dp1={1,1,1,0 ,1};
         RotateArray ra=new RotateArray();
-        System.out.println(ra.minNumberInRotateArray(dp));
+        System.out.println(ra.minNumberInRotateArray(dp1));
     }
 
 
