@@ -5,7 +5,6 @@
 
  解题思路
  由于 n 可能会非常大，因此不能直接用 int 表示数字，而是用 char 数组进行存储。
-
  使用回溯法得到所有的数。
  */
 
@@ -25,12 +24,14 @@ public class Print1ToMaxOfNDigits {
         }
         for (int i = 0; i < 10; i++) {
             number[digit] = (char) (i + '0');
+            //递归得到下一位的数
             print1ToMaxOfNDigits(number, digit + 1);
         }
     }
 
     private void printNumber(char[] number) {
         int index = 0;
+        //如果当前位上的数是0则不输出
         while (index < number.length && number[index] == '0') {
             index++;
         }
