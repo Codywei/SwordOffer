@@ -38,7 +38,7 @@ public class DeleteNode {
         a1.next=a2;
         a2.next=a3;
         a3.next=a4;
-        dn.deleteNode(a1,a3);
+        dn.deleteNode(a1,a4);
         while(a1!=null){
             System.out.println(a1.val);
             a1=a1.next;
