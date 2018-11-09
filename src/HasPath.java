@@ -50,7 +50,7 @@ public class HasPath {
                 return true;
             }
         }
-        //结束访问后恢复标志
+        //结束访问后恢复标志（因为还有其他起点进行backtracking，要清理好之前的现场）
         marked[r][c] = false;
         return false;
     }
