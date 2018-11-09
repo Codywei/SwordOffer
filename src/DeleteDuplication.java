@@ -1,5 +1,6 @@
 /**
- 删除有序链表中重复的结点
+ 删除有序链表中重复的结点（ 只要重复的就全删了）
+
  * */
 public class DeleteDuplication {
     public ListNode deleteDuplication(ListNode pHead) {
@@ -8,6 +9,7 @@ public class DeleteDuplication {
         }
         ListNode next = pHead.next;
         if (pHead.val == next.val) {
+            //当元素重复时，下一个值就不断延后
             while (next != null && pHead.val == next.val) {
                 next = next.next;
             }
@@ -17,6 +19,7 @@ public class DeleteDuplication {
             return pHead;
         }
     }
+
 
     public static void main(String[] args) {
          DeleteDuplication dd=new DeleteDuplication();
