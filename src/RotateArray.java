@@ -18,20 +18,22 @@
  * */
 public class RotateArray {
     public int minNumberInRotateArray(int[] nums) {
-        if (nums.length == 0) {
+        if(nums.length==0){
             return 0;
         }
-        int l = 0, h = nums.length - 1;
-        while (l < h) {
-            int m = l + (h - l) / 2;
-            if (nums[l] == nums[m] && nums[m] == nums[h]) {
-                return minNumber(nums, l, h);
+        int l=0;
+        int h=nums.length-1;
+        while(h>l){
+            int m=(l+h)/2;
+            //ÌØÊâÇé¿ö
+            if(nums[l]==nums[m]&&nums[m]==nums[h]){
+                return minNumber(nums,l,h);
             }
-            else if (nums[m] <= nums[h]) {
-                h = m;
+            if(nums[m]<=nums[h]){
+                h=m;
             }
-            else {
-                l = m + 1;
+            else{
+                l=m+1;
             }
         }
         return nums[l];
@@ -51,7 +53,7 @@ public class RotateArray {
         int[] dp={3,4,5,1,2};
         int[] dp1={1,1,1,0 ,1};
         RotateArray ra=new RotateArray();
-        System.out.println(ra.minNumberInRotateArray(dp1));
+        System.out.println(ra.minNumberInRotateArray(dp));
     }
 
 
