@@ -22,14 +22,17 @@ public class MovingCount {
         this.threshold = threshold;
         initDigitSum();
         boolean[][] marked = new boolean[rows][cols];
+        //从原点开始进行一次dfs
         dfs(marked, 0, 0);
         return cnt;
     }
 
     private void dfs(boolean[][] marked, int r, int c) {
+        //访问越界或节点已被访问
         if (r < 0 || r >= rows || c < 0 || c >= cols || marked[r][c]) {
             return;
         }
+        //访问后标志不清零
         marked[r][c] = true;
         if (this.digitSum[r][c] > this.threshold) {
             return;
@@ -39,7 +42,9 @@ public class MovingCount {
             dfs(marked, r + n[0], c + n[1]);
         }
     }
-
+    /**
+     * 将数组的值转化成行和列各个位数相加的值
+     * */
     private void initDigitSum() {
         int[] digitSumOne = new int[Math.max(rows, cols)];
         for (int i = 0; i < digitSumOne.length; i++) {
