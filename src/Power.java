@@ -22,6 +22,7 @@ public class Power {
             isNegative = true;
         }
         double pow = power(base * base, exponent / 2);
+        //幂为奇数，在最后的结果上乘个base
         if (exponent % 2 != 0) {
             pow = pow * base;
         }
