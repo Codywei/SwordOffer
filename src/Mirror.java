@@ -5,8 +5,8 @@
  * */
 public class Mirror {
     public void Mirror(TreeNode root) {
-        if (root == null) {
-            return;
+        if(root==null){
+            return ;
         }
         swap(root);
         Mirror(root.left);
@@ -14,9 +14,9 @@ public class Mirror {
     }
 
     private void swap(TreeNode root) {
-        TreeNode t = root.left;
-        root.left = root.right;
-        root.right = t;
+        TreeNode t=root.left;
+        root.left=root.right;
+        root.right=t;
     }
 
     public void scan(TreeNode root){
