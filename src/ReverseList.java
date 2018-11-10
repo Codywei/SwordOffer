@@ -5,14 +5,16 @@
  * */
 public class ReverseList {
     public ListNode ReverseList(ListNode head) {
-        if (head == null || head.next == null) {
+        if(head==null||head.next==null){
             return head;
         }
-        ListNode next = head.next;
-        head.next = null;
-        ListNode newHead = ReverseList(next);
-        next.next = head;
+        ListNode next=head.next;
+        head.next=null;
+        ListNode newHead=ReverseList(next);
+        next.next=head;
+
         return newHead;
+
     }
 
     public ListNode ReverseList2(ListNode head) {
