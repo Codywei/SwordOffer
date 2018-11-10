@@ -11,6 +11,7 @@ public class FindKthToTail {
             return null;
         }
         ListNode P1 = head;
+        //双指针中的一个先走
         while (P1 != null && k-- > 0) {
             P1 = P1.next;
         }
@@ -18,11 +19,13 @@ public class FindKthToTail {
             return null;
         }
         ListNode P2 = head;
+        //两个指针一起走
         while (P1 != null) {
             P1 = P1.next;
             P2 = P2.next;
         }
         return P2;
+
     }
 
     public static void main(String[] args) {
