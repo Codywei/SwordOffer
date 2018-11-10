@@ -9,13 +9,14 @@
  */
 public class ReOrderArray {
     public void reOrderArray(int[] nums) {
-        // 奇数个数
+        // 记录奇数个数
         int oddCnt = 0;
         for (int val : nums) {
             if (val % 2 == 1) {
                 oddCnt++;
             }
         }
+        //复制数组用于遍历
         int[] copy = nums.clone();
         int i = 0, j = oddCnt;
         for (int num : copy) {
