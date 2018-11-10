@@ -16,12 +16,16 @@ public class PrintMatrix {
             for (int i = r1 + 1; i <= r2; i++) {
                 ret.add(matrix[i][c2]);
             }
+            //避免奇数行重复打印
             if (r1 != r2) {
+                //注意不要重复（四角的元素）
                 for (int i = c2 - 1; i >= c1; i--) {
                     ret.add(matrix[r2][i]);
                 }
             }
+            //避免奇数列重复打印
             if (c1 != c2) {
+                //注意不要重复（四角的元素）
                 for (int i = r2 - 1; i > r1; i--) {
                     ret.add(matrix[i][c1]);
                 }
@@ -34,7 +38,7 @@ public class PrintMatrix {
     public static void main(String[] args) {
         PrintMatrix printmatrix=new PrintMatrix();
         ArrayList<Integer> ret=new ArrayList<>();
-        int [][]array={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+        int [][]array={{1,2,3,},{5,6,7},{9,10,11}};
         ret=printmatrix.printMatrix(array);
         for(int i=0;i<ret.size();i++){
             System.out.println(ret.get(i));
