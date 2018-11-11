@@ -82,14 +82,14 @@ public class PrintTree {
         t3.left=t6;
         t3.right=t7;
         t6.left=t8;
-//        ret=printTree.Print(t1);
-//        for (int i = 0; i <ret.size(); i++) {
-//          for(int j=0;j<ret.get(i).size();j++){
-//              System.out.print(ret.get(i).get(j));
-//          }
-//            System.out.println();
-//
-//        }
+        ret=printTree.Print(t1);
+        for (int i = 0; i <ret.size(); i++) {
+          for(int j=0;j<ret.get(i).size();j++){
+              System.out.print(ret.get(i).get(j));
+          }
+            System.out.println();
+
+        }
 
         ret=printTree.Print2(t1);
         for (int i = 0; i <ret.size(); i++) {
