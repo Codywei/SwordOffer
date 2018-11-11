@@ -10,7 +10,9 @@ public class FindequalsumPath {
     private ArrayList<ArrayList<Integer>> ret = new ArrayList<>();
 
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-        backtracking(root, target, new ArrayList<>());
+//        backtracking(root, target, new ArrayList<>());
+//        return ret;
+        backtracking(root,target,new ArrayList<>());
         return ret;
     }
 
@@ -28,6 +30,7 @@ public class FindequalsumPath {
         }
         //添加（遍历）当前节点后回退
         path.remove(path.size() - 1);
+
     }
 
     public static void main(String[] args) {
