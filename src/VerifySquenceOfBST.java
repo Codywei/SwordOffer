@@ -7,10 +7,10 @@
  * */
 public class VerifySquenceOfBST {
     public boolean VerifySquenceOfBST(int[] sequence) {
-        if (sequence == null || sequence.length == 0) {
+        if(sequence==null||sequence.length==0){
             return false;
         }
-        return verify(sequence, 0, sequence.length - 1);
+        return verify(sequence,0,sequence.length-1);
     }
 
     private boolean verify(int[] sequence, int first, int last) {
@@ -28,6 +28,7 @@ public class VerifySquenceOfBST {
             }
         }
         return verify(sequence, first, cutIndex - 1) && verify(sequence, cutIndex, last - 1);
+
     }
 
     public static void main(String[] args) {
