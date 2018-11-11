@@ -21,12 +21,11 @@ public class PrintTree {
             int cnt = queue.size();
             while (cnt-- > 0) {
                 TreeNode node = queue.poll();
-                if (node == null) {
-                    continue;
+                if(node!=null) {
+                    list.add(node.val);
+                    queue.add(node.left);
+                    queue.add(node.right);
                 }
-                list.add(node.val);
-                queue.add(node.left);
-                queue.add(node.right);
             }
             if (list.size() != 0) {
                 ret.add(list);
@@ -61,6 +60,8 @@ public class PrintTree {
             }
         }
         return ret;
+
+
     }
 
     public static void main(String[] args) {
@@ -81,14 +82,14 @@ public class PrintTree {
         t3.left=t6;
         t3.right=t7;
         t6.left=t8;
-        ret=printTree.Print(t1);
-        for (int i = 0; i <ret.size(); i++) {
-          for(int j=0;j<ret.get(i).size();j++){
-              System.out.print(ret.get(i).get(j));
-          }
-            System.out.println();
-
-        }
+//        ret=printTree.Print(t1);
+//        for (int i = 0; i <ret.size(); i++) {
+//          for(int j=0;j<ret.get(i).size();j++){
+//              System.out.print(ret.get(i).get(j));
+//          }
+//            System.out.println();
+//
+//        }
 
         ret=printTree.Print2(t1);
         for (int i = 0; i <ret.size(); i++) {
