@@ -11,17 +11,17 @@ import java.util.Stack;
  * */
 public class PopOrder {
     public boolean IsPopOrder(int[] pushSequence, int[] popSequence) {
-        int n = pushSequence.length;
-        Stack<Integer> stack = new Stack<>();
-        for (int pushIndex = 0, popIndex = 0; pushIndex < n; pushIndex++) {
-            stack.push(pushSequence[pushIndex]);
-            //满足弹出条件的元素出栈
-            while (popIndex < n && !stack.isEmpty() && stack.peek() == popSequence[popIndex]) {
-                stack.pop();
+        int n=pushSequence.length;
+        Stack<Integer> test=new Stack<>();
+        int popIndex=0;
+        for(int i=0;i<n;i++){
+            test.push(pushSequence[i]);
+            while(popIndex<n&&test.peek()==popSequence[popIndex]&&!test.isEmpty()){
+                test.pop();
                 popIndex++;
             }
         }
-        return stack.isEmpty();
+        return test.isEmpty();
     }
 
     public static void main(String[] args) {
