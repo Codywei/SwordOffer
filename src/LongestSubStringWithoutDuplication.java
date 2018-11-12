@@ -35,6 +35,7 @@ public class LongestSubStringWithoutDuplication {
         }
         maxLen = Math.max(maxLen, curLen);
         return maxLen;
+
     }
 
     public static void main(String[] args) {
