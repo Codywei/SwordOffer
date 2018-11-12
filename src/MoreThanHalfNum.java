@@ -18,12 +18,14 @@ public class MoreThanHalfNum {
             }
         }
         int cnt = 0;
+        //从头遍历验证majority个数
         for (int val : nums) {
             if (val == majority) {
                 cnt++;
             }
         }
         return cnt > nums.length / 2 ? majority : 0;
+
     }
 
     public static void main(String[] args) {
