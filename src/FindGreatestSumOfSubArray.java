@@ -6,16 +6,18 @@
  * */
 public class FindGreatestSumOfSubArray {
     public int FindGreatestSumOfSubArray(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if(nums==null||nums.length==0){
             return 0;
         }
-        int greatestSum = Integer.MIN_VALUE;
-        int sum = 0;
-        for (int val : nums) {
-            sum = sum <= 0 ? val : sum + val;
-            greatestSum = Math.max(greatestSum, sum);
+        int greatnum=Integer.MIN_VALUE;
+        int sum=0;
+        for (int i = 0; i < nums.length; i++) {
+            //如果之前的sum为0，则直接从当前位开始重新计算
+            sum=sum<=0?nums[i]:sum+nums[i];
+            greatnum=Math.max(greatnum,sum);
+
         }
-        return greatestSum;
+        return greatnum;
     }
 
     public static void main(String[] args) {
