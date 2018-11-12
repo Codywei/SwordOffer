@@ -57,6 +57,6 @@ public class GetDigitAtIndex {
 
     public static void main(String[] args) {
         GetDigitAtIndex gi=new GetDigitAtIndex();
-        System.out.println(gi.getDigitAtIndex(1));
+        System.out.println(gi.getDigitAtIndex(30));
     }
 }
