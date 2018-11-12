@@ -28,7 +28,7 @@ public class Permutation {
             if (hasUsed[i]) {
                 continue;
             }
-            // 保证不重复(这里不太懂)
+            // 保证不重复(如“abbc”中的‘b’)
             if (i != 0 && chars[i] == chars[i - 1] && !hasUsed[i - 1]) {
                 continue;
             }
@@ -42,7 +42,7 @@ public class Permutation {
 
     public static void main(String[] args) {
         ArrayList<String> ret=new ArrayList<>();
-        String str="abc";
+        String str="abbc";
         Permutation permutation=new Permutation();
         ret=permutation.Permutation(str);
         for (int i = 0; i < ret.size(); i++) {
