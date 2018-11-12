@@ -31,6 +31,7 @@ public class FirstNotRepeatingChar {
                 // 0 0 -> 0 1
                 bs1.set(c);
             }
+            //注意这里是else if
             else if (bs1.get(c) && !bs2.get(c)) {
                 // 0 1 -> 1 1
                 bs2.set(c);
@@ -44,6 +45,7 @@ public class FirstNotRepeatingChar {
             }
         }
         return -1;
+
     }
 
     public static void main(String[] args) {
