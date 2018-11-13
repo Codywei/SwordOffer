@@ -9,26 +9,31 @@ import java.util.ArrayList;
 public class FindContinuousSequence {
     public ArrayList<ArrayList<Integer>> FindContinuousSequence(int sum) {
         ArrayList<ArrayList<Integer>> ret = new ArrayList<>();
-        int start = 1, end = 2;
-        int curSum = 3;
-        while (end < sum) {
-            if (curSum > sum) {
-                curSum -= start;
+
+        int start=1;
+        int end=2;
+        int cursum=3;
+        while(end<sum){
+            if(cursum>sum){
+                cursum-=start;
                 start++;
-            } else if (curSum < sum) {
+            }
+            else if(cursum<sum){
                 end++;
-                curSum += end;
-            } else {
-                ArrayList<Integer> list = new ArrayList<>();
-                for (int i = start; i <= end; i++) {
+                cursum+=end;
+            }
+            else{
+                ArrayList<Integer> list=new ArrayList<>();
+                for(int i=start;i<=end;i++){
                     list.add(i);
                 }
                 ret.add(list);
-                curSum -= start;
+                cursum-=start;
                 start++;
                 end++;
-                curSum += end;
+                cursum+=end;
             }
+
         }
         return ret;
     }
