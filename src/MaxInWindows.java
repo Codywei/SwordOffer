@@ -20,12 +20,13 @@ public class MaxInWindows {
         }
         ret.add(heap.peek());
         /* 维护一个大小为 size 的大顶堆 */
-        for (int i = 0, j = i + size; j < num.length; i++, j++) {
+        for (int i = 0, j = size; j < num.length; i++, j++) {
             heap.remove(num[i]);
             heap.add(num[j]);
             ret.add(heap.peek());
         }
         return ret;
+
     }
 
     public static void main(String[] args) {
