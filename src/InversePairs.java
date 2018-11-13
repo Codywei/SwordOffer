@@ -12,42 +12,50 @@ public class InversePairs {
     private int[] tmp;
 
     public int InversePairs(int[] nums) {
-        tmp = new int[nums.length];
-        mergeSort(nums, 0, nums.length - 1);
-        return (int) (cnt % 1000000007);
+        tmp=new int[nums.length];
+        mergeSort(nums,0,nums.length-1);
+        return (int)(cnt % 1000000007);
     }
 
     private void mergeSort(int[] nums, int l, int h) {
-        if (h - l < 1) {
+
+        if(h-l<1){
             return;
         }
-        int m = l + (h - l) / 2;
-        mergeSort(nums, l, m);
-        mergeSort(nums, m + 1, h);
-        merge(nums, l, m, h);
+        int m=l+(h-l)/2;
+        mergeSort(nums,l,m);
+        mergeSort(nums,m+1,h);
+        merge(nums,l,m,h);
     }
 
     private void merge(int[] nums, int l, int m, int h) {
-        int i = l, j = m + 1, k = l;
-        while (i <= m || j <= h) {
-            if (i > m) {
-                tmp[k] = nums[j++];
+        int i=l,j=m+1,k=l;
+        //注意边界条件的确定，如果这里是<而不是<= 可能执行下来就不会排序了
+        while(i<=m||j<=h){
+            if(i>m){
+                tmp[k]=nums[j++];
             }
-            else if (j > h) {
-                tmp[k] = nums[i++];
+            else if(j>h){
+                tmp[k]=nums[i++];
             }
-            else if (nums[i] < nums[j]) {
-                tmp[k] = nums[i++];
+            else if(nums[i]<=nums[j]){
+                tmp[k]=nums[i++];
             }
-            else {
-                tmp[k] = nums[j++];
+            else{
+                tmp[k]=nums[j++];
                 // nums[i] >= nums[j]，说明 nums[i...mid] 都大于 nums[j]
-                this.cnt += m - i + 1;
+                cnt+=m-i+1;
             }
             k++;
         }
-        for (k = l; k <= h; k++) {
-            nums[k] = tmp[k];
+        for (int n = l; n <=h; n++) {
+          nums[n]=tmp[n];
         }
+    }
+
+    public static void main(String[] args) {
+        InversePairs ip=new InversePairs();
+        int[] nums={4,3,2,1};
+        System.out.println(ip.InversePairs(nums));
     }
 }
