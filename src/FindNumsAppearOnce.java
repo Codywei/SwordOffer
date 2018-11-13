@@ -14,9 +14,11 @@ public class FindNumsAppearOnce {
         for (int num : nums) {
             diff ^= num;
         }
+        //diff &= -diff 得到出 diff 最右侧不为 0 的位
         diff &= -diff;
         for (int num : nums) {
             if ((num & diff) == 0) {
+                //相同元素在异或后抵消
                 num1[0] ^= num;
             }
             else {
