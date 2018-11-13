@@ -17,9 +17,10 @@ public class LeftRotateString {
             return str;
         }
         char[] chars = str.toCharArray();
-        reverse(chars, 0, n - 1);
-        reverse(chars, n, chars.length - 1);
-        reverse(chars, 0, chars.length - 1);
+
+        reverse(chars,0,n-1);
+        reverse(chars,n,chars.length-1);
+        reverse(chars,0,chars.length-1);
         return new String(chars);
     }
 
