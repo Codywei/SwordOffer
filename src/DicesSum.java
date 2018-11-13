@@ -78,9 +78,9 @@ public class DicesSum {
     public static void main(String[] args) {
         DicesSum ds=new DicesSum();
         List<Map.Entry<Integer, Double>> ret = new ArrayList<>();
-        ret=ds.dicesSum1(6);
-        System.out.println(ret.get(0).getKey());
-        System.out.println(ret.get(0).getValue());
+        ret=ds.dicesSum1(8);
+        System.out.println(ret.get(1).getKey());
+        System.out.println(ret.get(1).getValue());
     }
 
 }
