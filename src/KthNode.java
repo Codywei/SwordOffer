@@ -14,15 +14,16 @@ public class KthNode {
     }
 
     private void inOrder(TreeNode root, int k) {
-        if (root == null || cnt >= k) {
+
+        if(root==null||cnt>k){
             return;
         }
-        inOrder(root.left, k);
+        inOrder(root.left,k);
         cnt++;
-        if (cnt == k) {
-            ret = root;
+        if(cnt==k){
+            ret=root;
         }
-        inOrder(root.right, k);
+        inOrder(root.right,k);
     }
 
     public static void main(String[] args) {
