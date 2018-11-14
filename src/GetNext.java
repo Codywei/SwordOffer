@@ -1,5 +1,5 @@
 /**
- 二叉树的下一个结点
+ 二叉树的下一个结点（二叉树，中序）
 
  题目描述
  给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
@@ -24,8 +24,9 @@ public class GetNext {
                 }
                 pNode=pNode.next;
             }
+
         }
-        return null;
+       return null;
     }
 
     public static void main(String[] args) {
@@ -47,6 +48,14 @@ public class GetNext {
         GetNext gt=new GetNext();
         System.out.println(gt.GetNext(a1).val);
         System.out.println(gt.GetNext(a2).val);
+        try {
+            System.out.println(gt.GetNext(a3).val);
+        }catch (Exception e){
+            System.out.println(" Next Node Not Found");
+        }finally {
+
+        }
         System.out.println(gt.GetNext(a4).val);
+        System.out.println(gt.GetNext(a5).val);
     }
 }
