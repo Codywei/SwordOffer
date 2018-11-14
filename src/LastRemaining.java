@@ -10,6 +10,7 @@
  * */
 public class LastRemaining {
     public int LastRemaining_Solution(int n, int m) {
+
          /* 特殊输入的处理 */
         if (n == 0) {
             return -1;
