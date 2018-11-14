@@ -7,7 +7,7 @@
 
  解题思路
  这种数组元素在 [0, n-1] 范围内的问题(注意范围，超过该范围无法在当前数组内完成交换)，可以将值为 i 的元素调整到第 i 个位置上。
- 需要额外增加一个替换函数
+ 需要额外增加一个交换函数
  * */
 public class Duplicate {
     public boolean dupplicate(int []nums,int length ,int []duplication) {
