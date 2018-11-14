@@ -7,6 +7,7 @@
 
  解题思路
  这种数组元素在 [0, n-1] 范围内的问题(注意范围，超过该范围无法在当前数组内完成交换)，可以将值为 i 的元素调整到第 i 个位置上。
+ 需要额外增加一个替换函数
  * */
 public class Duplicate {
     public boolean dupplicate(int []nums,int length ,int []duplication) {
@@ -15,7 +16,7 @@ public class Duplicate {
         }
 
         for (int i = 0; i < nums.length; i++) {
-            //当i位置的值不是i时就不断交换
+            //当i位置的值不是i时就不断交换(使用while)
             while(nums[i]!=i){
                 //当前位上的值与nums[i]位上值重复
                 if(nums[i]==nums[nums[i]]){
