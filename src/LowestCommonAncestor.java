@@ -11,11 +11,12 @@ public class LowestCommonAncestor {
         if (root == null) {
             return root;
         }
-        if (root.val > p.val && root.val > q.val) {
-            return lowestCommonAncestor1(root.left, p, q);
+
+        if(root.val>p.val&&root.val>q.val){
+            return lowestCommonAncestor2(root.left,p,q);
         }
-        if (root.val < p.val && root.val < q.val) {
-            return lowestCommonAncestor1(root.right, p, q);
+        if(root.val<p.val&&root.val<q.val){
+            return lowestCommonAncestor2(root.right,p,q);
         }
         return root;
     }
