@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
 /**
- 从尾到头打印链表
+ 从尾到头打印链表（链表，栈，递归，集合）
 
  题目描述
  输入链表的第一个节点，从尾到头反过来打印出每个结点的值。
