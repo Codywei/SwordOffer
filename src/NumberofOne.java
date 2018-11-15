@@ -1,5 +1,5 @@
 /**
- 二进制中 1 的个数
+ 二进制中 1 的个数（位运算）
 
  题目描述
  输入一个整数，输出该数二进制表示中 1 的个数。
@@ -18,6 +18,7 @@
 public class NumberofOne {
     public int NumberOfone(int n) {
         int cnt = 0;
+        //注意边界条件的判断
         while (n != 0) {
             cnt++;
             n &= (n - 1);
