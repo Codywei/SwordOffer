@@ -1,5 +1,5 @@
 /**
- 链表中环的入口结点
+ 链表中环的入口结点（链表）
 
 
  题目描述
@@ -7,9 +7,9 @@
 
  解题思路
  使用双指针，一个指针 fast 每次移动两个节点，一个指针 slow 每次移动一个节点。因为存在环，所以两个指针必定相遇在环中的某个节点上。
- fast 移动的节点数为 x+2y+z，slow 为 x+y，由于 fast 速度比 slow 快一倍，因此 x+2y+z=2(x+y)，得到 x=z。
+ fast 移动的节点数为 x+Ky+(K-1)z（K>=2），slow 为 x+y，由于 fast 速度比 slow 快一倍，因此 x+Ky+(K-1)z=2(x+y)，得到 x=(K-2)(y+z)+z。[(K-2)(y+z)表示若干圈]
 
- 在相遇点，slow 要到环的入口点还需要移动 z 个节点，如果让 fast 重新从头开始移动，并且速度变为每次移动一个节点，那么它到环入口点还需要移动 x 个节点。在上面已经推导出 x=z，因此 fast 和 slow 将在环入口点相遇。
+ 在相遇点，slow 要到环的入口点还需要移动 z 个节点(或者n圈+z个节点)，如果让 fast 重新从头开始移动，并且速度变为每次移动一个节点，那么它到环入口点还需要移动 x 个节点。在上面已经推导出 x=(K-2)(y+z)+z，因此 fast 和 slow 将在环入口点相遇。
  * */
 public class EntryNodeOfLoop {
     public ListNode EntryNodeOfLoop(ListNode pHead) {
