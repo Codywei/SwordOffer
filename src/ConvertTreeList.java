@@ -1,5 +1,5 @@
 /**
- 二叉搜索树与双向链表
+ 二叉搜索树与双向链表（树，链表）
 
  题目描述
  输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。
@@ -18,15 +18,25 @@ public class ConvertTreeList {
         if(node==null){
             return;
         }
+        //先遍历左子树
         inOrder(node.left);
+        //当前节点的前驱节点是pre
         node.left=pre;
+
+        //完善前驱节点向后的指针
         if(pre!=null){
             pre.right=node;
         }
+
+        //遍历完当前节点，将node赋值给pre
         pre=node;
+
+        //头节点的赋值
         if(head==null){
             head=node;
         }
+
+        //后遍历右子树
         inOrder(node.right);
     }
 
