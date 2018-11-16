@@ -1,17 +1,15 @@
 import java.util.ArrayList;
 /**
-二叉树中和为某一值的路径
+二叉树中和为某一值的路径(树，回溯)
 
  题目描述
  输入一颗二叉树和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
  下图的二叉树有两条和为 22 的路径：10, 5, 7 和 10, 12
  * */
-public class FindequalsumPath {
+public class FindEqualSumPath {
     private ArrayList<ArrayList<Integer>> ret = new ArrayList<>();
 
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-//        backtracking(root, target, new ArrayList<>());
-//        return ret;
         backtracking(root,target,new ArrayList<>());
         return ret;
     }
@@ -43,7 +41,7 @@ public class FindequalsumPath {
         t1.right=t3;
         t2.left=t4;
         t2.right=t5;
-        FindequalsumPath fp=new FindequalsumPath();
+        FindEqualSumPath fp=new FindEqualSumPath();
         ArrayList<ArrayList<Integer>> list=fp.FindPath(t1,22);
         for (int i = 0; i<list.size(); i++) {
             for (int j = 0; j < list.get(i).size(); j++) {
