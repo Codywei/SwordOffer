@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 /**
- 最小的 K 个数
+ 最小的 K 个数（快速排序，堆排序）
 
  解题思路
  1.快速选择
