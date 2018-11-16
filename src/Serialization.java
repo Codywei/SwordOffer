@@ -1,5 +1,6 @@
 /**
- 序列化二叉树(是一个前序遍历的过程)
+ 序列化二叉树（树，前序遍历）
+
 
  请实现两个函数，分别用来序列化和反序列化二叉树。
  * */
@@ -23,6 +24,8 @@ public class Serialization {
             return null;
         }
         int index = deserializeStr.indexOf(" ");
+
+        //如果没有找到空格的索引，node有可能位于最后一位，所以后面没跟空格
         String node = index == -1 ? deserializeStr : deserializeStr.substring(0, index);
         deserializeStr = index == -1 ? "" : deserializeStr.substring(index + 1);
         if (node.equals("#")) {
