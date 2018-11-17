@@ -1,5 +1,5 @@
 /**
- 从 1 到 n 整数中 1 出现的次数
+ 从 1 到 n 整数中 1 出现的次数（秀智商）
  * */
 public class NumberOf1Between1AndN {
     public int NumberOf1Between1AndN_Solution(int n) {
