@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 /**
- 滑动窗口的最大值
+ 滑动窗口的最大值（数组，堆排序）
 
  题目描述
  给定一个数组和滑动窗口的大小，找出所有滑动窗口里数值的最大值。
