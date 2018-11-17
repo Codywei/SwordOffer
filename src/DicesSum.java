@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- n 个骰子的点数
+ n 个骰子的点数（动态规划）
 
  题目描述
  把 n 个骰子仍在地上，求点数和为 s 的概率。
