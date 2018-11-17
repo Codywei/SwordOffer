@@ -6,6 +6,7 @@ public class NumberOf1Between1AndN {
         int cnt = 0;
         for(int m=1;m<=n;m*=10){
             int a=n/m; int b=n%m;
+            //加8是为了区分前几位“0-1”和“2-10”的情况，循环的当前位为1时，再加b+1
             cnt+=(a+8)/10*m+(a%10==1?b+1:0);
         }
         return cnt;
