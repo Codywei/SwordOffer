@@ -13,17 +13,18 @@ public class JumpFloor {
         if(n<=2){
             return n;
         }
+        int result=0;
         int pre2=1;
         int pre1=2;
-        int result=0;
-        while(n>2){
-            result=pre2+pre1;
+        //注意这里的赋值步骤不要搞错了
+        for(int i=3;i<=n;i++){
+            result=pre1+pre2;
             pre2=pre1;
             pre1=result;
-            n--;
+
         }
-          return result;
-    }
+        return result;
+ }
 
     public static void main(String[] args) {
          JumpFloor jf=new JumpFloor();
