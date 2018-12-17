@@ -26,7 +26,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         Fibonacci fb=new Fibonacci();
-        System.out.println(fb.fibonacci(0));
+        System.out.println(fb.fibonacci(4));
     }
 
 }
