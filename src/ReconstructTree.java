@@ -19,15 +19,16 @@ import java.util.Map;
  * */
 public class ReconstructTree {
     // 缓存中序遍历数组每个值对应的索引
-    private Map<Integer, Integer> indexForInOrders = new HashMap<>();
+    private Map<Integer,Integer>indexorder=new HashMap<>();
+    public TreeNode reConstructBinaryTree(int[]pre,int[] in){
+        for (int i = 0; i < in.length; i++) {
+           indexorder.put(in[i],i);
 
-    public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
-
-        for(int i=0;i<in.length;i++){
-            indexForInOrders.put(in[i],i);
         }
         return reConstructBinaryTree(pre,0,pre.length-1,0);
     }
+
+
 
     /**
      * @param pre  前序遍历数组
@@ -37,15 +38,16 @@ public class ReconstructTree {
      * @return
      */
     private TreeNode reConstructBinaryTree(int[] pre, int preL, int preR, int inL) {
-
         if(preL>preR){
             return null;
         }
         TreeNode root=new TreeNode(pre[preL]);
-        int inIndex=indexForInOrders.get(root.val);
-        int LeftTreesize=inIndex-inL;
-        root.left=reConstructBinaryTree(pre,preL+1,preL+LeftTreesize,inL);
-        root.right=reConstructBinaryTree(pre,preL+LeftTreesize+1,preR,inL+LeftTreesize+1);
+        //index为当前节点在中序遍历数组中的索引
+        int index=indexorder.get(root.val);
+        //LeftTreeSize为当前节点的左子树大小
+        int LeftTreeSize=index-inL;
+        root.left=reConstructBinaryTree(pre,preL+1,preL+LeftTreeSize,inL);
+        root.right=reConstructBinaryTree(pre,preL+LeftTreeSize+1,preR,inL+LeftTreeSize+1);
         return root;
     }
 
