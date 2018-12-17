@@ -61,12 +61,36 @@ public class ReconstructTree {
         }
     }
 
+    public CharTreeNode reconstructreebystring(String pre,String in){
+        if(pre.isEmpty()){
+            return null;
+        }
+        CharTreeNode root=new CharTreeNode(pre.charAt(0));
+        int rootindex=in.indexOf((char)root.val);
+        root.left=reconstructreebystring(pre.substring(1,rootindex+1),in.substring(0,rootindex));
+        root.right=reconstructreebystring(pre.substring(rootindex+1),in.substring(rootindex+1));
+        return root;
+    }
+
+    public void printchartree(CharTreeNode node){
+        if(node!=null) {
+            System.out.println(node.val);
+            printchartree(node.left);
+            printchartree(node.right);
+        }
+    }
+
+
     public static void main(String[] args) {
-        int []pre={3,9,20,15,7};
-        int []in={9,3,15,20,7};
+//        int []pre={3,9,20,15,7};
+//        int []in={9,3,15,20,7};
         ReconstructTree rt=new ReconstructTree();
-        TreeNode root=rt.reConstructBinaryTree(pre,in);
-        rt.printtree(root);
+//        TreeNode root=rt.reConstructBinaryTree(pre,in);
+//        rt.printtree(root);
+        String pre2="ABDEGCF";
+        String in2="DBGEACF";
+        CharTreeNode root2=rt.reconstructreebystring(pre2,in2);
+        rt.printchartree(root2);
     }
 
 }
