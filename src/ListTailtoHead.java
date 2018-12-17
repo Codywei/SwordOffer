@@ -16,13 +16,13 @@ public class ListTailtoHead {
      使用栈
      * */
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
-        Stack<Integer> stack = new Stack<>();
-        while (listNode != null) {
+        Stack<Integer>stack=new Stack<>();
+        while(listNode!=null){
             stack.add(listNode.val);
-            listNode = listNode.next;
+            listNode=listNode.next;
         }
-        ArrayList<Integer> ret = new ArrayList<>();
-        while (!stack.isEmpty()) {
+        ArrayList<Integer> ret=new ArrayList<>();
+        while(!stack.isEmpty()){
             ret.add(stack.pop());
         }
         return ret;
@@ -34,8 +34,9 @@ public class ListTailtoHead {
      使用递归
      * */
     public ArrayList<Integer> printListFromTailToHead2(ListNode listNode) {
-        ArrayList<Integer> ret = new ArrayList<>();
-        if (listNode != null) {
+
+        ArrayList<Integer> ret=new ArrayList<>();
+        if(listNode!=null){
             ret.addAll(printListFromTailToHead2(listNode.next));
             ret.add(listNode.val);
         }
@@ -43,34 +44,9 @@ public class ListTailtoHead {
     }
 
     /**
-     使用头插法
-     头结点和第一个节点的区别：
-     头结点是在头插法中使用的一个额外节点，这个节点不存储值；
-     第一个节点就是链表的第一个真正存储值的节点。
-     * */
-    public ArrayList<Integer> printListFromTailToHead3(ListNode listNode) {
-        // 头插法构建逆序链表
-        ListNode head = new ListNode(-1);
-        while (listNode != null) {
-            ListNode memo = listNode.next;
-            listNode.next = head.next;
-            head.next = listNode;
-            listNode = memo;
-        }
-        // 构建 ArrayList
-        ArrayList<Integer> ret = new ArrayList<>();
-        head = head.next;
-        while (head != null) {
-            ret.add(head.val);
-            head = head.next;
-        }
-        return ret;
-    }
-
-    /**
      使用Collections.reverse
      * */
-    public ArrayList<Integer> printListFromTailToHead4(ListNode listNode) {
+    public ArrayList<Integer> printListFromTailToHead3(ListNode listNode) {
         ArrayList<Integer> ret = new ArrayList<>();
         while (listNode != null) {
             ret.add(listNode.val);
@@ -78,7 +54,32 @@ public class ListTailtoHead {
         }
         Collections.reverse(ret);
         return ret;
+
     }
+
+    /**
+     使用循环控制
+     需要维护两个节点（当前头结点curHead，和新的头结点newHead）
+     * */
+    public ArrayList<Integer> printListFromTailToHead4(ListNode listNode) {
+
+        ListNode newHead=null;
+        ListNode curHead=listNode;
+        while(curHead!=null){
+            ListNode next= curHead.next;
+            curHead.next=newHead;
+            newHead=curHead;
+            curHead=next;
+        }
+        ArrayList<Integer> ret=new ArrayList<>();
+        while(newHead!=null){
+            ret.add(newHead.val);
+            newHead=newHead.next;
+        }
+        return ret;
+    }
+
+
 
     public static void main(String[] args) {
         ListNode n1=new ListNode(1);
