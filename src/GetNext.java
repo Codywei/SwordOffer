@@ -18,15 +18,13 @@ public class GetNext {
             return pNode;
         }else{
             while(pNode.next!=null){
-                TreeLinkNode parent=pNode.next;
-                if(parent.left==pNode){
-                    return parent;
+                if (pNode.next.left==pNode){
+                    return pNode.next;
                 }
                 pNode=pNode.next;
             }
-
         }
-       return null;
+        return null;
     }
 
     public static void main(String[] args) {
