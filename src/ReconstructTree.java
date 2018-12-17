@@ -82,11 +82,11 @@ public class ReconstructTree {
 
 
     public static void main(String[] args) {
-//        int []pre={3,9,20,15,7};
-//        int []in={9,3,15,20,7};
+        int []pre={3,9,20,15,7};
+        int []in={9,3,15,20,7};
         ReconstructTree rt=new ReconstructTree();
-//        TreeNode root=rt.reConstructBinaryTree(pre,in);
-//        rt.printtree(root);
+        TreeNode root=rt.reConstructBinaryTree(pre,in);
+        rt.printtree(root);
         String pre2="ABDEGCF";
         String in2="DBGEACF";
         CharTreeNode root2=rt.reconstructreebystring(pre2,in2);
