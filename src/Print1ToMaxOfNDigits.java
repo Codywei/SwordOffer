@@ -10,11 +10,11 @@
 
 public class Print1ToMaxOfNDigits {
     public void print1ToMaxOfNDigits(int n) {
-        if (n <= 0) {
-            return;
+        if(n<=0){
+            return ;
         }
-        char[] number = new char[n];
-        print1ToMaxOfNDigits(number, 0);
+        char[]number=new char[n];
+        print1ToMaxOfNDigits(number,0);
     }
 
     private void print1ToMaxOfNDigits(char[] number, int digit) {
@@ -28,6 +28,7 @@ public class Print1ToMaxOfNDigits {
             print1ToMaxOfNDigits(number, digit + 1);
         }
     }
+
 
     private void printNumber(char[] number) {
         int index = 0;
