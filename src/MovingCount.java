@@ -9,12 +9,13 @@
  回溯法
  * */
 public class MovingCount {
-    private static final int[][] next = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
-    private int cnt = 0;
+
+    private static final int[][] next={{0,1},{0,-1},{1,0},{-1,0}};
     private int rows;
     private int cols;
+    private int[][]digitSum;
     private int threshold;
-    private int[][] digitSum;
+    private int cnt=0;
 
     public int movingCount(int threshold, int rows, int cols) {
         this.rows = rows;
@@ -22,7 +23,7 @@ public class MovingCount {
         this.threshold = threshold;
         initDigitSum();
         boolean[][] marked = new boolean[rows][cols];
-        //从原点开始进行一次dfs
+       //从原点开始进行一次dfs
         dfs(marked, 0, 0);
         return cnt;
     }
@@ -46,24 +47,36 @@ public class MovingCount {
      * 将数组的值转化成行和列各个位数相加的值
      * */
     private void initDigitSum() {
-        int[] digitSumOne = new int[Math.max(rows, cols)];
+
+        int[] digitSumOne=new int[Math.max(rows,cols)];
         for (int i = 0; i < digitSumOne.length; i++) {
-            int n = i;
-            while (n > 0) {
-                digitSumOne[i] += n % 10;
-                n /= 10;
+            int n=i;
+            while(n>0){
+                digitSumOne[i]+=n%10;
+                n=n/10;
             }
+
         }
-        this.digitSum = new int[rows][cols];
-        for (int i = 0; i < this.rows; i++) {
-            for (int j = 0; j < this.cols; j++) {
-                this.digitSum[i][j] = digitSumOne[i] + digitSumOne[j];
+        this.digitSum=new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                digitSum[i][j]=digitSumOne[i]+digitSumOne[j];
+
             }
+
         }
     }
 
     public static void main(String[] args) {
         MovingCount mc=new MovingCount();
+
         System.out.println(mc.movingCount(5,5,6));
+
+        for (int i = 0; i < mc.rows; i++) {
+            for (int j = 0; j < mc.cols; j++) {
+                System.out.print(mc.digitSum[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 }
