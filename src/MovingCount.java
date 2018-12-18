@@ -16,19 +16,20 @@ public class MovingCount {
     private int[][]digitSum;
     private int threshold;
     private int cnt=0;
+    boolean marked[][];
 
     public int movingCount(int threshold, int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
         this.threshold = threshold;
         initDigitSum();
-        boolean[][] marked = new boolean[rows][cols];
+        this.marked = new boolean[rows][cols];
        //从原点开始进行一次dfs
-        dfs(marked, 0, 0);
+        dfs(0, 0);
         return cnt;
     }
 
-    private void dfs(boolean[][] marked, int r, int c) {
+    private void dfs( int r, int c) {
         //访问越界或节点已被访问
         if (r < 0 || r >= rows || c < 0 || c >= cols || marked[r][c]) {
             return;
@@ -40,7 +41,7 @@ public class MovingCount {
         }
         cnt++;
         for (int[] n : next) {
-            dfs(marked, r + n[0], c + n[1]);
+            dfs(r + n[0], c + n[1]);
         }
     }
     /**
