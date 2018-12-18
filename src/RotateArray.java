@@ -18,22 +18,25 @@
  * */
 public class RotateArray {
     public int minNumberInRotateArray(int[] nums) {
+
         if(nums.length==0){
             return 0;
         }
         int l=0;
         int h=nums.length-1;
-        while(h>l){
-            int m=(l+h)/2;
+        while(l<h){
+            //这里使用l+(h-l)/2，而不是用(l+h)/2，是怕l+h数值过大直接溢出
+            int m=l+(h-l)/2;
             //特殊情况
             if(nums[l]==nums[m]&&nums[m]==nums[h]){
                 return minNumber(nums,l,h);
             }
             if(nums[m]<=nums[h]){
-                h=m;
+               h=m;
             }
             else{
-                l=m+1;
+              //这里区间的范围一定要缩小，不然极有可能陷入死循环
+              l=m+1;
             }
         }
         return nums[l];
@@ -51,9 +54,10 @@ public class RotateArray {
 
     public static void main(String[] args) {
         int[] dp={3,4,5,1,2};
-        int[] dp1={1,1,1,0 ,1};
+        int[] dp1={1,1,1,0,1};
         RotateArray ra=new RotateArray();
         System.out.println(ra.minNumberInRotateArray(dp));
+        System.out.println(ra.minNumberInRotateArray(dp1));
     }
 
 
