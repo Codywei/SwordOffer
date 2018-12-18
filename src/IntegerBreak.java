@@ -33,22 +33,25 @@ public class IntegerBreak {
 
     public int integerBreak2(int n) {
         int[] dp = new int[n + 1];
-        System.out.println(dp[2]);
         dp[1] = 1;
         for (int i = 2; i <= n; i++){
             for (int j = 1; j < i; j++) {
-                //dp[i]或j*(i-j)或dp[j]*[i-j]
-                dp[i] = Math.max(dp[i], Math.max(j * (i - j), dp[j] * (i - j)));
+
+                //这里比三个数（dp[i]是上次迭代产生的最大值，j * (i - j)是指当前两数直接相乘的结果，dp[j] * (i - j)),在dp[j]的组合最大值的基础再乘（i-j））
+                //比如dp[2]=1,而根据j * (i - j)计算，dp[3]=2,根据dp[j] * (i - j))，计算dp[3]=1，取较大的计算结果。
+               dp[i] = Math.max(dp[i], Math.max(j * (i - j), dp[j] * (i - j)));
+
 
             }
         }
 
         return dp[n];
+
     }
 
     public static void main(String[] args) {
         IntegerBreak ib=new IntegerBreak();
-        System.out.println(ib.integerBreak(7));
+        System.out.println(ib.integerBreak(3));
         System.out.println(ib.integerBreak2(7));
     }
 
