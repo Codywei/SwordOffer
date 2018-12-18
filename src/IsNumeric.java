@@ -49,7 +49,7 @@ public class IsNumeric {
         boolean sign = false, decimal = false, hasE = false;
         for (int i = 0; i < str.length; i++) {
             if (str[i] == 'e' || str[i] == 'E') {
-                // e后面一定要接数字
+                // e不能在末尾
                 if (i == str.length-1) {
                     return false;
                 }
@@ -78,6 +78,10 @@ public class IsNumeric {
                 // 不合法字符
                 return false;
             }
+            //最后一位得是个数字
+            if(i==str.length-1&&(str[i]<'0'|| str[i] > '9')){
+                return false;
+            }
         }
         return true;
     }
@@ -85,7 +89,7 @@ public class IsNumeric {
 
     public static void main(String[] args) {
         IsNumeric in=new IsNumeric();
-        String str="+.80e+21";
+        String str="+.80e+";
         System.out.println(in.isNumeric2(str.toCharArray()));
     }
 }
