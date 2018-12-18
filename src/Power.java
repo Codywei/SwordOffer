@@ -17,6 +17,7 @@ public class Power {
             return base;
         }
         boolean isNegative = false;
+        //如果幂是负数，就先当正数相乘，设置负数标志位，得到最后返回值再判断
         if (exponent < 0) {
             exponent = -exponent;
             isNegative = true;
@@ -27,11 +28,12 @@ public class Power {
             pow = pow * base;
         }
         return isNegative ? 1 / pow : pow;
+
     }
 
     public static void main(String[] args) {
         Power power=new Power();
-        System.out.println(power.power(3.0,6));
+        System.out.println(power.power(3.0,-2));
 
     }
 }
