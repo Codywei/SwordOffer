@@ -10,7 +10,8 @@
  回溯法
  * */
 public class HasPath {
-    private final static int[][] next = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
+
+    private final static int[][] next={{0,-1},{0,1},{1,0},{-1,0}};
     private int rows;
     private int cols;
 
@@ -18,6 +19,7 @@ public class HasPath {
         if (rows == 0 || cols == 0) {
             return false;
         }
+        //这里需要把hasPath中的局部变量赋值给类成员变量，这样才能在方法递归时共享这个变量
         this.rows = rows;
         this.cols = cols;
         boolean[][] marked = new boolean[rows][cols];
@@ -31,6 +33,8 @@ public class HasPath {
             }
         }
         return false;
+
+
     }
 
     private boolean backtracking(char[][] matrix, char[] str, boolean[][] marked, int pathLen, int r, int c) {
@@ -66,9 +70,9 @@ public class HasPath {
     }
 
     public static void main(String[] args) {
-        char[]array={'a','b','t','c','f','c','j','d','e'};
-        char[]str={'b','f','c','b'};
+        char[]array={'a','b','t','g','c','f','c','s','j','d','e','h'};
+        char[]str={'b','f','c','e'};
         HasPath hp=new HasPath();
-        System.out.println(hp.hasPath(array,3,3,str));
+        System.out.println(hp.hasPath(array,3,4,str));
     }
 }
