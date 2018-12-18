@@ -21,6 +21,7 @@ public class NumberofOne {
         //注意边界条件的判断
         while (n != 0) {
             cnt++;
+            //每一次与运算就会去除一个1
             n &= (n - 1);
         }
         return cnt;
