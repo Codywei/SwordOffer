@@ -14,6 +14,9 @@ public class HasPath {
     private final static int[][] next={{0,-1},{0,1},{1,0},{-1,0}};
     private int rows;
     private int cols;
+    private char[][] matrix;
+    private char[]str;
+    private boolean[][] marked;
 
     public boolean hasPath(char[] array, int rows, int cols, char[] str) {
         if (rows == 0 || cols == 0) {
@@ -22,12 +25,13 @@ public class HasPath {
         //这里需要把hasPath中的局部变量赋值给类成员变量，这样才能在方法递归时共享这个变量
         this.rows = rows;
         this.cols = cols;
-        boolean[][] marked = new boolean[rows][cols];
-        char[][] matrix = buildMatrix(array);
+        this.marked = new boolean[rows][cols];
+        this.matrix = buildMatrix(array);
+        this.str=str;
         //遍历每一个空格，将每个空格作为起点试一下
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                if (backtracking(matrix, str, marked, 0, i, j)) {
+                if (backtracking( 0, i, j)) {
                     return true;
                 }
             }
@@ -37,7 +41,7 @@ public class HasPath {
 
     }
 
-    private boolean backtracking(char[][] matrix, char[] str, boolean[][] marked, int pathLen, int r, int c) {
+    private boolean backtracking( int pathLen, int r, int c) {
         //长度满足后返回
         if (pathLen == str.length) {
             return true;
@@ -50,7 +54,7 @@ public class HasPath {
         marked[r][c] = true;
         //在四个方向上回溯
         for (int[] n : next) {
-            if (backtracking(matrix, str, marked, pathLen + 1, r + n[0], c + n[1])) {
+            if (backtracking(pathLen + 1, r + n[0], c + n[1])) {
                 return true;
             }
         }
