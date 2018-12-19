@@ -17,13 +17,13 @@ public class Power {
             return base;
         }
         boolean isNegative = false;
-        //如果幂是负数，就先当正数相乘，设置负数标志位，得到最后返回值再判断
+        //如果幂是负数，就先当正数相乘，设置负数标志位，得到最后返回值再判断(负数在在递归前处理)
         if (exponent < 0) {
             exponent = -exponent;
             isNegative = true;
         }
         double pow = power(base * base, exponent / 2);
-        //幂为奇数，在最后的结果上乘个base
+        //幂为奇数，在最后的结果上乘个base（奇数补base，在递归中处理；比如幂为7，那么在7/2=3,3/2=1,过程中不是2的倍数的情况都需要补个base）
         if (exponent % 2 != 0) {
             pow = pow * base;
         }
