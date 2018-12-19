@@ -8,15 +8,9 @@ public class ReverseList {
         if(head==null||head.next==null){
             return head;
         }
-//        ListNode next=head.next;
-//        head.next=null;
-//        ListNode newHead=ReverseList(next);
-//        next.next=head;
-//
-//        return newHead;
-        ListNode next=head.next;
-        ListNode newHead=ReverseList(next);
-        next.next=head;
+
+        ListNode newHead=ReverseList(head.next);
+        head.next.next=head;
         head.next=null;
         return newHead;
 
@@ -54,7 +48,7 @@ public class ReverseList {
         a2.next=a3;
         a3.next=a4;
         ReverseList rl=new ReverseList();
-        ListNode head=rl.ReverseList3(a1);
+        ListNode head=rl.ReverseList(a1);
         while(head!=null) {
             System.out.println(head.val);
             head=head.next;
