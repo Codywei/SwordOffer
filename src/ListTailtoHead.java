@@ -8,7 +8,7 @@ import java.util.Stack;
  输入链表的第一个节点，从尾到头反过来打印出每个结点的值。
 
  解题思路
- 1.栈（后进先出） 2.递归   3.头插法  4.Collections.reverse
+ 1.栈（后进先出） 2.递归   3.循环控制  4.Collections.reverse
  */
 
 public class ListTailtoHead {
@@ -104,6 +104,8 @@ public class ListTailtoHead {
         for(int i=0;i<list4.size();i++){
             System.out.println(list4.get(i));
         }
+
+
 
 
 
