@@ -12,9 +12,9 @@ public class DeleteDuplication {
         }
         ListNode next = pHead.next;
         if (pHead.val == next.val) {
-            //当元素重复时，下一个值就不断延后
+            //当元素重复时，下一个值就不断延后（这里加上next!=null判断是防止之后next为空时，next.val抛出异常）
             while (next != null && pHead.val == next.val) {
-                next = next.next;
+                    next = next.next;
             }
             return deleteDuplication(next);
         } else {
