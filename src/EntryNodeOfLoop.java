@@ -13,7 +13,6 @@
  * */
 public class EntryNodeOfLoop {
     public ListNode EntryNodeOfLoop(ListNode pHead) {
-
         if(pHead==null||pHead.next==null){
             return null;
         }
@@ -33,7 +32,6 @@ public class EntryNodeOfLoop {
            slow=slow.next;
        }
        return slow;
-
     }
 
     public static void main(String[] args) {
