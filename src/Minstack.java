@@ -13,7 +13,6 @@ public class Minstack {
         dataStack.push(node);
         //精髓：用表达式直接判断minStack该加入什么元素
         minStack.push(minStack.isEmpty() ? node : Math.min(minStack.peek(), node));
-
     }
 
     public void pop() {
