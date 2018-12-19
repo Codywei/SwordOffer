@@ -18,7 +18,6 @@ public class Merge {
             list2.next = Merge1(list1, list2.next);
             return list2;
         }
-
     }
 
     public ListNode Merge2(ListNode list1, ListNode list2) {
@@ -41,7 +40,6 @@ public class Merge {
             cur.next = list2;
         }
         return head.next;
-
     }
 
     public static void main(String[] args) {
