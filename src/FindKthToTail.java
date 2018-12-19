@@ -25,7 +25,6 @@ public class FindKthToTail {
             P2 = P2.next;
         }
         return P2;
-
     }
 
     public static void main(String[] args) {
