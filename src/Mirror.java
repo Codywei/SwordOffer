@@ -6,7 +6,7 @@
 public class Mirror {
     public void Mirror(TreeNode root) {
         if(root==null){
-            return ;
+            return;
         }
         swap(root);
         Mirror(root.left);
