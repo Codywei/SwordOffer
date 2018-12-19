@@ -10,6 +10,7 @@ public class Symmetrical {
             return true;
         }
         return isSymmetrical(pRoot.left,pRoot.right);
+
     }
 
     boolean isSymmetrical(TreeNode t1, TreeNode t2) {
