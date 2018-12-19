@@ -9,20 +9,25 @@ public class HasSubtree {
         if(root1==null){
             return false;
         }
+        //将当前节点作为匹配的起点，或将左子节点作为匹配的起点，或将右子节点作为匹配的起点，这样递归的意思将整棵原树的节点都考虑进需要进行匹配的节点里。
         return isSubtreeWithRoot(root1,root2)||HasSubtree(root1.left,root2)||HasSubtree(root1.right,root2);
+
     }
 
     private boolean isSubtreeWithRoot(TreeNode root1, TreeNode root2) {
-
+        //树的子结构匹配完了
         if(root2==null){
             return true;
         }
+        //树的子结构还没匹配完，原树就匹配到头了
         if(root1==null){
             return false;
         }
+        //当前子结构节点与原树节点不匹配
         if(root1.val!=root2.val){
             return false;
         }
+        //当前子结构节点与原树节点匹配上了，需要再递归节点的匹配左子树和右子树
         return isSubtreeWithRoot(root1.left,root2.left)&&isSubtreeWithRoot(root1.right,root2.right);
 
     }
