@@ -1,9 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  Ë³Ê±Õë´òÓ¡¾ØÕó£¨¾ØÕó£©
-
-
  * */
 public class PrintMatrix {
     public ArrayList<Integer> printMatrix(int[][] matrix) {
