@@ -8,6 +8,7 @@ import java.util.Arrays;
 
  解题思路
  数组拷贝（先记录奇数的个数作为下标）
+ 引用变量也是基本数据类型，在进行方法调用时会对引用变量进行复制。
  */
 public class ReOrderArray {
     public void reOrderArray(int[] nums) {
