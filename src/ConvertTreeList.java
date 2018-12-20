@@ -38,6 +38,7 @@ public class ConvertTreeList {
 
         //ºó±éÀúÓÒ×ÓÊ÷
         inOrder(node.right);
+
     }
 
     public static void main(String[] args) {
