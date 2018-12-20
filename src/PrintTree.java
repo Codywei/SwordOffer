@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -32,6 +33,7 @@ public class PrintTree {
             }
         }
         return ret;
+
     }
 
     public ArrayList<ArrayList<Integer>> Print2(TreeNode pRoot) {
