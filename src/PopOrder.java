@@ -11,17 +11,22 @@ import java.util.Stack;
  * */
 public class PopOrder {
     public boolean IsPopOrder(int[] pushSequence, int[] popSequence) {
+
         int n=pushSequence.length;
-        Stack<Integer> test=new Stack<>();
-        int popIndex=0;
+        Stack<Integer> stack=new Stack<>();
+        if(n!=popSequence.length){
+            return false;
+        }
+        int popindex=0;
         for(int i=0;i<n;i++){
-            test.push(pushSequence[i]);
-            while(popIndex<n&&test.peek()==popSequence[popIndex]&&!test.isEmpty()){
-                test.pop();
-                popIndex++;
+            stack.push(pushSequence[i]);
+            //判断popindex是否还在出栈序列索引范围内，判断当前出栈序列元素是否和和栈顶元素相同
+            while(popindex<n&&popSequence[popindex]==stack.peek()){
+                stack.pop();
+                popindex++;
             }
         }
-        return test.isEmpty();
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
