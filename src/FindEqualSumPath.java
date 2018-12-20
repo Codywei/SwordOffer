@@ -7,9 +7,11 @@ import java.util.ArrayList;
  下图的二叉树有两条和为 22 的路径：10, 5, 7 和 10, 12
  * */
 public class FindEqualSumPath {
-    private ArrayList<ArrayList<Integer>> ret = new ArrayList<>();
+
+    private ArrayList<ArrayList<Integer>> ret=new ArrayList<>();
 
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
+
         backtracking(root,target,new ArrayList<>());
         return ret;
     }
@@ -21,7 +23,9 @@ public class FindEqualSumPath {
         path.add(node.val);
         target -= node.val;
         if (target == 0 && node.left == null && node.right == null) {
+            //底下注释的是错误的写法，这里以path参数必须新建一个ArrayList，,如果直接把path加入ret,之后对path的操作会直接影响ret里的path。
             ret.add(new ArrayList<>(path));
+            //ret.add(path);
         } else {
             backtracking(node.left, target, path);
             backtracking(node.right, target, path);
