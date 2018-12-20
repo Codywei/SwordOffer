@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -34,19 +35,21 @@ public class PrintFromTopToBottom {
     }
 
     public ArrayList<Integer> PrintFromTopToBottom2(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<>();
-        ArrayList<Integer> ret = new ArrayList<>();
+        Queue<TreeNode> queue=new LinkedList<>();
+        ArrayList ret=new ArrayList();
         queue.add(root);
-        while (!queue.isEmpty()) {
-                TreeNode t = queue.poll();
-                if (t != null) {
-                    ret.add(t.val);
-                    queue.add(t.left);
-                    queue.add(t.right);
+        while(!queue.isEmpty()){
+            TreeNode node=queue.poll();
+            //如果当前节点为空则跳过
+            if(node!=null) {
+                continue;
             }
+                ret.add(node.val);
+                queue.add(node.left);
+                queue.add(node.right);
+
         }
         return ret;
-
     }
 
     public static void main(String[] args) {
