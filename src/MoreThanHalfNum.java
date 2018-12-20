@@ -25,7 +25,6 @@ public class MoreThanHalfNum {
             }
         }
         return cnt > nums.length / 2 ? majority : 0;
-
     }
 
     public static void main(String[] args) {
