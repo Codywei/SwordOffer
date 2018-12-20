@@ -15,6 +15,7 @@ public class FindFirstCommonNode {
             l2=l2==null?pHead1:l2.next;
         }
         return l1;
+
     }
 
     public static void main(String[] args) {
