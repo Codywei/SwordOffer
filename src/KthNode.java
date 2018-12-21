@@ -2,20 +2,22 @@
  二叉查找树的第K个结点（树，中序遍历）
 
  解题思路
- 利用二叉查找树中序遍历有序的特点。
+ 利用二叉查找树中序遍历有序的特点,先递归遍历左子树，然后当前节点（计数器+1，判断当前计数是否和k相同），然后递归遍历右子树。
  * */
 public class KthNode {
+
     private TreeNode ret;
-    private int cnt = 0;
+    private int cnt=0;
 
     public TreeNode KthNode(TreeNode pRoot, int k) {
-        inOrder(pRoot, k);
+
+        inOrder(pRoot,k);
         return ret;
     }
 
     private void inOrder(TreeNode root, int k) {
 
-        if(root==null||cnt>k){
+        if(root==null||cnt>=k){
             return;
         }
         inOrder(root.left,k);
