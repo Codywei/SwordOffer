@@ -20,12 +20,12 @@ public class FindNumsAppearOnce {
             if ((num & diff) == 0) {
                 //相同元素在异或后抵消
                 num1[0] ^= num;
-            }
-            else {
+            } else {
                 num2[0] ^= num;
             }
         }
     }
+
 
     public static void main(String[] args) {
         FindNumsAppearOnce fn=new FindNumsAppearOnce();
