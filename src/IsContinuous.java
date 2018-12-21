@@ -10,6 +10,7 @@ import java.util.Arrays;
  * */
 public class IsContinuous {
     public boolean isContinuous(int[] nums) {
+
         if(nums.length<5){
             return false;
         }
@@ -20,11 +21,11 @@ public class IsContinuous {
                 cnt++;
             }
         }
-        for (int i = 0; i < nums.length-1; i++) {
-           if(nums[i+1]==nums[i]){
-               return false;
-           }
-           cnt-=nums[i+1]-nums[i]-1;
+        for(int i=cnt;i<nums.length-1;i++){
+            if(nums[i+1]==nums[i]){
+                return false;
+            }
+            cnt-=(nums[i+1]-nums[i]-1);
         }
         return cnt>=0;
     }
