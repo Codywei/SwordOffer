@@ -5,9 +5,10 @@
  平衡二叉树左右子树高度差不超过 1。
  * */
 public class IsBalanced {
-    private boolean isBalanced = true;
+    private boolean isBalanced=true;
 
     public boolean IsBalanced_Solution(TreeNode root) {
+
         height(root);
         return isBalanced;
     }
