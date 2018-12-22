@@ -25,7 +25,6 @@ public class PrintMinNumber {
             ret += str;
         }
         return ret;
-
     }
 
     public static void main(String[] args) {
