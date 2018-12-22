@@ -21,6 +21,7 @@ public class FirstNotRepeatingChar {
             }
         }
         return -1;
+
     }
 
     public int FirstNotRepeatingChar2(String str) {
