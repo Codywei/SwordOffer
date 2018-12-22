@@ -27,6 +27,7 @@ public class StrToInt {
             if(c<'0'||c>'9'){
                 return 0;
             }
+            //通过c-'0'就可以直接得到字符对应的int数值
             ret=ret*10+(c-'0');
         }
         return isNegative? -ret:ret;
@@ -34,7 +35,7 @@ public class StrToInt {
 
     public static void main(String[] args) {
         StrToInt sti=new StrToInt();
-        String str="12324";
+        String str="+12324";
         System.out.println(sti.StrToInt(str));
     }
 }
