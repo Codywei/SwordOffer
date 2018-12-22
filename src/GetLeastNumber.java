@@ -26,7 +26,7 @@ public class GetLeastNumber {
             return ret;
         }
         findKthSmallest(nums, k - 1);
-    //findKthSmallest 会改变数组，使得前 k 个数都是最小的 k 个数
+        //findKthSmallest 会改变数组，使得前 k 个数都是最小的 k 个数
         for (int i = 0; i < k; i++) {
             ret.add(nums[i]);
         }
@@ -47,6 +47,7 @@ public class GetLeastNumber {
                 l = j + 1;
             }
         }
+
     }
 
     private int partition(int[] nums, int l, int h) {
@@ -93,7 +94,7 @@ public class GetLeastNumber {
     public static void main(String[] args) {
         GetLeastNumber gln=new GetLeastNumber();
         int[] nums={1,3,54,6,4,5,24,8,7};
-        ArrayList<Integer>list=gln.GetLeastNumbers_Solution2(nums,4);
+        ArrayList<Integer>list=gln.GetLeastNumbers_Solution(nums,4);
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
