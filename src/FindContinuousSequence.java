@@ -13,7 +13,8 @@ public class FindContinuousSequence {
         int start=1;
         int end=2;
         int cursum=3;
-        while(end<sum){
+        //因为是连续正数数列，所以单个数不算，因此需要end<sum
+        while(end<sum&&start<=end){
             if(cursum>sum){
                 cursum-=start;
                 start++;
@@ -36,6 +37,7 @@ public class FindContinuousSequence {
 
         }
         return ret;
+
     }
 
     public static void main(String[] args) {
