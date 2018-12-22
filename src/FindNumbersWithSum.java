@@ -14,7 +14,6 @@ import java.util.Arrays;
  * */
 public class FindNumbersWithSum {
     public ArrayList<Integer> FindNumbersWithSum(int[] array, int sum) {
-
         int i=0;
         int j=array.length-1;
         while(i<j){
@@ -31,6 +30,7 @@ public class FindNumbersWithSum {
         }
          return new ArrayList<>();
     }
+
 
     public static void main(String[] args) {
         FindNumbersWithSum fn=new FindNumbersWithSum();
