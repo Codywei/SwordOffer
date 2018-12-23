@@ -40,17 +40,21 @@ public class GetMedian {
 
     }
 
+
     public Double GetMedian() {
         if(N%2==0){
+            //因为是字符流，为了重复使用不能使用poll，而应该用peek()
             return (left.peek()+right.peek())/2.0;
         }else{
             return (double)right.peek();
         }
+
     }
 
     public static void main(String[] args) {
         GetMedian gm=new GetMedian();
-        int[] nums={1,2,3,4,5,6,7,8};
+//        int[] nums={1,2,3,4,5,6,7,8};
+        int[] nums={1,2,3};
         for (int i = 0; i < nums.length; i++) {
             gm.Insert(nums[i]);
         }
