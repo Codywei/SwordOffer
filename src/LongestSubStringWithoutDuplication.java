@@ -33,9 +33,9 @@ public class LongestSubStringWithoutDuplication {
             //更新字符出现的位置
             preIndexs[c] = curI;
         }
+        //最后这里记得还得再取一下最大值，避免遗漏末尾的子字符串
         maxLen = Math.max(maxLen, curLen);
         return maxLen;
-
     }
 
     public static void main(String[] args) {
