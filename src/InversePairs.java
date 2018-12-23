@@ -14,7 +14,7 @@ public class InversePairs {
     public int InversePairs(int[] nums) {
         tmp=new int[nums.length];
         mergeSort(nums,0,nums.length-1);
-        return (int)(cnt % 1000000007);
+        return (int)(cnt%1000000007);
     }
 
     private void mergeSort(int[] nums, int l, int h) {
