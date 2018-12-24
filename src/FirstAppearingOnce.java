@@ -21,12 +21,13 @@ public class FirstAppearingOnce {
         while(!queue.isEmpty()&&cnts[queue.peek()]>1){
             queue.poll();
         }
-
     }
+
+
 
     public char FirstAppearingOnce() {
-       return queue.isEmpty() ? '#' : queue.peek();
-    }
+        return queue.isEmpty()? '#':queue.peek();
+   }
     public static void main(String[] args) {
         FirstAppearingOnce fa=new FirstAppearingOnce();
         char[] nums={'d','d','a','v','b','b','c','c'};
