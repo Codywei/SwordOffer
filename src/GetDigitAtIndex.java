@@ -20,6 +20,7 @@ public class GetDigitAtIndex {
             index -= totalAmount;
             place++;
         }
+
     }
 
     /**
@@ -27,10 +28,11 @@ public class GetDigitAtIndex {
      * 10, 90, 900, ...
      */
     private int getAmountOfPlace(int place) {
-        if (place == 1) {
+
+        if(place==1){
             return 10;
         }
-        return (int) Math.pow(10, place - 1) * 9;
+        return (int)Math.pow(10,place-1)*9;
     }
 
     /**
@@ -38,10 +40,10 @@ public class GetDigitAtIndex {
      * 0, 10, 100, ...
      */
     private int getBeginNumberOfPlace(int place) {
-        if (place == 1) {
+        if(place==1){
             return 0;
         }
-        return (int) Math.pow(10, place - 1);
+        return (int)Math.pow(10,place-1);
     }
 
     /**
