@@ -1,3 +1,6 @@
+/**
+ CharTreeNode节点定义
+ * */
 public class CharTreeNode {
     char val;
     CharTreeNode left;
