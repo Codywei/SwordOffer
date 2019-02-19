@@ -1,5 +1,5 @@
-/**
- ListNode�ڵ㶨��
+﻿/**
+ ListNode节点定义
  * */
 public class ListNode {
     int val;
