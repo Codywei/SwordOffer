@@ -28,7 +28,7 @@ public class DeleteDuplication {
     public static void main(String[] args) {
          DeleteDuplication dd=new DeleteDuplication();
         ListNode a1=new ListNode(1);
-        ListNode a2=new ListNode(1);
+        ListNode a2=new ListNode(2);
         ListNode a3=new ListNode(2);
         ListNode a4=new ListNode(2);
         a1.next=a2;
