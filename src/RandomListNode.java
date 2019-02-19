@@ -1,6 +1,5 @@
 /**
-RandomListNode �ڵ�
-
+RandomListNode节点定义
  * */
 public class RandomListNode {
     int label;
