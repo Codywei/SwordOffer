@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  调整数组顺序使奇数位于偶数前面（数组）
 
@@ -34,7 +32,7 @@ public class ReOrderArray {
 
 /**
  * 底下这个是显示有问题的，本意是想建一个copy空数组，在这个copy数组上调整好元素顺序，再在最后一行nums=copy将新数组copy赋值给nums，但这个
- * nums并不等于main方法中的nums，nums这个引用变量在方法调用的时候复制了一份，所以改方法中的引用变量是无效的
+ * nums并不等于main方法中的nums，nums这个引用变量在方法调用的时候复制了一份，所以改方法中的引用变量是无效的(作用域问题)
  * */
 //        int cnt=0;
 //        for(int val:nums){
