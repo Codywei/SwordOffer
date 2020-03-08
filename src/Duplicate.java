@@ -27,7 +27,7 @@ public class Duplicate {
                 swap(nums,nums[i],i);
             }
         }
-        return true;
+        return false;
     }
 
     private void swap(int[]nums,int i,int j){
