@@ -4,20 +4,19 @@
  题目描述
  数字以 0123456789101112131415... 的格式序列化到一个字符串中，求这个字符串的第 index 位。
  * */
-public class GetDigitAtIndex {
+public class    GetDigitAtIndex {
     public int getDigitAtIndex(int index) {
-        if (index < 0) {
+        if(index<0){
             return -1;
         }
-        // 1 表示个位，2 表示 十位...
-        int place = 1;
-        while (true) {
-            int amount = getAmountOfPlace(place);
-            int totalAmount = amount * place;
-            if (index < totalAmount) {
-                return getDigitAtIndex(index, place);
+        int place=1;
+        while(true){
+            int amount=getAmountOfPlace(place);
+            int totalAmount=amount*place;
+            if(index<=totalAmount){
+                return getDigitAtIndex(index,place);
             }
-            index -= totalAmount;
+            index-=totalAmount;
             place++;
         }
 
@@ -28,7 +27,6 @@ public class GetDigitAtIndex {
      * 10, 90, 900, ...
      */
     private int getAmountOfPlace(int place) {
-
         if(place==1){
             return 10;
         }
@@ -50,15 +48,19 @@ public class GetDigitAtIndex {
      * 在 place 位数组成的字符串中，第 index 个数
      */
     private int getDigitAtIndex(int index, int place) {
-        int beginNumber = getBeginNumberOfPlace(place);
-        int shiftNumber = index / place;
-        String number = (beginNumber + shiftNumber) + "";
-        int count = index % place;
-        return number.charAt(count) - '0';
+          int beginNumber=getBeginNumberOfPlace(place);
+          int shiftNumber=index/place;
+          int count=(index)%place;
+          if(count==0){
+              String number=beginNumber+shiftNumber-1+"";
+              return  number.charAt(number.length()-1)-'0';
+          }
+          String number=beginNumber+shiftNumber+"";
+          return  number.charAt(count-1)-'0';
     }
 
     public static void main(String[] args) {
         GetDigitAtIndex gi=new GetDigitAtIndex();
-        System.out.println(gi.getDigitAtIndex(30));
+        System.out.println(gi.getDigitAtIndex(194));
     }
 }
