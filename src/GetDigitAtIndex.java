@@ -48,19 +48,15 @@ public class    GetDigitAtIndex {
      * 在 place 位数组成的字符串中，第 index 个数
      */
     private int getDigitAtIndex(int index, int place) {
-          int beginNumber=getBeginNumberOfPlace(place);
-          int shiftNumber=index/place;
-          int count=(index)%place;
-          if(count==0){
-              String number=beginNumber+shiftNumber-1+"";
-              return  number.charAt(number.length()-1)-'0';
-          }
-          String number=beginNumber+shiftNumber+"";
-          return  number.charAt(count-1)-'0';
+        int beginNumber = getBeginNumberOfPlace(place);
+        int shiftNumber = index / place;
+        String number = (beginNumber + shiftNumber) + "";
+        int count = index % place;
+        return number.charAt(count) - '0';
     }
 
     public static void main(String[] args) {
         GetDigitAtIndex gi=new GetDigitAtIndex();
-        System.out.println(gi.getDigitAtIndex(194));
+        System.out.println(gi.getDigitAtIndex(29));
     }
 }
